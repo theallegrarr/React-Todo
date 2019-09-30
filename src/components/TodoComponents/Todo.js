@@ -52,7 +52,7 @@ export default class Todo extends React.Component {
     // const modIndex = currState.todos.findIndex(x => x.id === id);
     currState.todos.forEach(x => {
       if(x.id === id)
-        x.completed = true;
+        x.completed = !x.completed;
     })
 
     this.setState(currState);
