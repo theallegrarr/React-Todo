@@ -1,0 +1,36 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  background-color: darkslategray;
+  justify-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 20pt;
+}
+
+p {
+  height: 10px;
+  margin: 0;
+  font-weight: 900;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  flex-flow: wrap;
+  width: 100%;
+}
+
+input {
+  width: 99%;
+  height: 30px;
+  text-align: center;
+  font-weight: 900;
+}
+
+button {
+  height: 30px;
+  border: 2px solid darkslategray;
+  width: 50%;
+  font-weight: 900;
+}
