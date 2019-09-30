@@ -1,9 +1,10 @@
 // your components will all go in this `component` directory.
 // feel free to change this component.js into TodoList.js
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import uuid from 'uuid';
 import TodoForm from './TodoForm';
 import TodoList from './TodoList';
+import './Todo.css';
 
 export default class Todo extends React.Component {
 
@@ -29,6 +30,7 @@ export default class Todo extends React.Component {
     this.add = this.add.bind(this);
     this.complete = this.complete.bind(this);
     this.update = this.update.bind(this);
+    this.clear = this.clear.bind(this);
   };
 
   
@@ -44,8 +46,6 @@ export default class Todo extends React.Component {
     });
 
   }
-
-  
 
   complete(id){
     const currState = this.state;
@@ -65,19 +65,28 @@ export default class Todo extends React.Component {
     });
   }
 
+  clear(){
+    this.setState({
+      todos: this.state.todos.filter(todo => todo.completed === false),
+    });
+  }
+
   render() {
     return(
-      <>
+      <div className='container'>
         <TodoList 
           todos={this.state.todos} 
           add={this.add}
           complete={this.complete}
+          className='list'
           />
         <TodoForm 
           update={this.update}
           add={this.add}
+          clear={this.clear}
+          className='form'
         />
-      </>
+      </div>
     );
   };
 }

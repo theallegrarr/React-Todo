@@ -8,12 +8,12 @@ export default class TodoList extends React.Component {
     return(
       this.props.todos.map(todo => (
         <ul>
-          <li 
+          <p 
           onClick={this.props.complete.bind(this, todo.id)}
           style={{
             textDecoration: todo.completed ? 'line-through' : 'none'
           }}
-          >{todo.task}</li>
+          >{todo.task}</p>
         </ul>
       ))
     );
